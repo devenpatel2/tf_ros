@@ -20,7 +20,7 @@ int main(int argc, char** argv){
   ros::init(argc, argv, "my_tf_broadcaster");
   if (argc != 2){ROS_ERROR("need turtle name as argument"); return -1;};
   turtle_name = argv[1];
-
+  ROS_INFO("node name %s",turtle_name.c_str());
   ros::NodeHandle node;
   ros::Subscriber sub = node.subscribe(turtle_name+"/pose", 10, &poseCallback);
 
